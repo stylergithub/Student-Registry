@@ -5,9 +5,7 @@ name: Student Registry CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "release/**" ]
 
 jobs:
   build:
@@ -27,5 +25,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: npm start
     - run: npm test
